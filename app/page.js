@@ -212,18 +212,14 @@ export default function Home() {
           </Stack>
         </Box>
       </Modal>
-        <Button
-          variant="contained"
-          onClick={()=>{
-            handleOpen()
-          }}
-        >Add New Item</Button>
-
         <Box border='1px solid #333'>
           <Box
-            width="800px"
+            width="1000px"
             height="100px"
             bgcolor="#ADD8E6"
+            sx={{
+              paddingTop: "10px",
+            }}
           >
             <Typography 
               variant="h2"
@@ -233,20 +229,33 @@ export default function Home() {
               justifyContent="center"
             >Inventory Items</Typography>
           </Box>
-          <Box display="flex" alignItems="center">
-            <Typography variant="h5" marginRight="10px" marginLeft="35px">Search</Typography>
-            <TextField
-              variant="outlined"
-              sx={{ height: '40px', '.MuiOutlinedInput-root': { height: '100%' }, margin:"10px" }}
-              value={filter}
-              onChange={(e)=> {
-                setFilter(e.target.value)
+          <Box display="flex" alignItems="center" justifyContent="space-between" marginRight={8}>
+            <Box display="flex" alignItems="center">
+              <Typography variant="h5" marginRight="10px" marginLeft="35px">Search</Typography>
+              <TextField
+                variant="outlined"
+                sx={{ height: '40px', '.MuiOutlinedInput-root': { height: '100%' }, margin:"10px" }}
+                value={filter}
+                onChange={(e)=> {
+                  setFilter(e.target.value)
+                }}
+              />
+            </Box>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                fontSize: '16px', 
+                backgroundColor: 'green',
               }}
-            />
+              onClick={()=>{
+                handleOpen()
+              }}
+            >Add New Item</Button>
           </Box>
             <Stack
-              width="800px"
-              height="300px"
+              width="1000px"
+              height="600px"
               spacing={2}
               overflow="auto"
             >
@@ -257,7 +266,7 @@ export default function Home() {
                   <Box
                     key={name}
                     width="100%"
-                    minHeight="80px"
+                    height="80px"
                     display="flex"
                     alignItems="center"
                     justifyContent="space-between"

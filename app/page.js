@@ -255,7 +255,7 @@ export default function Home() {
           </Box>
             <Stack
               width="1000px"
-              height="600px"
+              height="500px"
               spacing={2}
               overflow="auto"
             >
